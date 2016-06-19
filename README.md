@@ -1,2 +1,2 @@
 # GamerPad
-Use Android device as gamePad in windows
+Use Android device as a game controller in windows and linux
