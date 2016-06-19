@@ -2,7 +2,8 @@ import time
 
 import pyautogui
 
-MOTION_CONSTANT = 5.0
+MOTION_CONSTANT = 10.1
+
 
 
 def pressKey(c):
