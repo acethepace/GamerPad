@@ -1,29 +1,42 @@
 package com.mallock.controllify;
 
+
+import android.app.ActionBar;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 /**
- * Created by Akshat on 20-06-2016.
+ * Created by Mallock on 09-06-2016.
  */
 public class BaseActivity extends AppCompatActivity {
 
-    public void setToolbarChild()
+    protected void setToolBarChild()
+    {
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(
+                new ColorDrawable(getResources().getColor(
+                        R.color.actionbar_color)));
+        actionBar.setDisplayOptions(actionBar.getDisplayOptions()
+                | ActionBar.DISPLAY_HOME_AS_UP);
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setTitle(R.string.app_name);
+        try {
+            actionBar.setDisplayShowHomeEnabled(true);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        try {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
+    }
+
+    protected void setToolbarHome()
     {
 
     }
-    public void setToolbarHome()
-    {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.e(this.getClass().getSimpleName()," destroyed");
-    }
 }
