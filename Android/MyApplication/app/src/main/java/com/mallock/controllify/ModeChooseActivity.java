@@ -1,11 +1,16 @@
 package com.mallock.controllify;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.mallock.controllify.Utils.PopupUtils;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 
 public class ModeChooseActivity extends BaseActivity {
 
@@ -19,6 +24,14 @@ public class ModeChooseActivity extends BaseActivity {
 
     @OnClick(R.id.choice_gamepad)
     public void useAsGamepad(){
+        Intent i = new Intent(this, GameControllerActivity.class);
+        startActivity(i);
+    }
+
+    @OnLongClick(R.id.choice_gamepad)
+    public void showGamePadToolTip() {
+        ImageView imageView = (ImageView) findViewById(R.id.iv_gamepad);
+        PopupUtils.showPopup(imageView, "Use phone as gamepad");
 
     }
 
