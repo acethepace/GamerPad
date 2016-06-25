@@ -23,7 +23,7 @@ public class ModeChooseActivity extends BaseActivity {
     }
 
     @OnClick(R.id.choice_gamepad)
-    public void useAsGamepad(){
+    public void useAsGamepad() {
         Intent i = new Intent(this, GameControllerActivity.class);
         startActivity(i);
     }
