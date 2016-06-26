@@ -28,6 +28,12 @@ public class ModeChooseActivity extends BaseActivity {
         startActivity(i);
     }
 
+    @OnClick(R.id.choice_scroll)
+    public void useAsScroll() {
+        Intent i = new Intent(this, ScrollerActivity.class);
+        startActivity(i);
+    }
+
     /**
      * TODO: show popup explaining usage on long click
      */

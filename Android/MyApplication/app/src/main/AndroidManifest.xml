@@ -20,7 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameControllerActivity"></activity>
+        <activity android:name=".GameControllerActivity" />
+        <activity
+            android:name=".ScrollerActivity"
+            android:label="@string/title_activity_scroller"
+            android:parentActivityName=".ModeChooseActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mallock.controllify.ModeChooseActivity" />
+        </activity>
     </application>
 
 </manifest>
